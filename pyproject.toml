@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datavault"
+dynamic = ["version"]
+authors = [
+    { name = "Andy Conn", email = "andyconn1988@googlemail.com"}
+]
+urls.github = "https://github.com/Andyconn1/datavault"
+description = "A tool for storing and important personal information."
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = ["pandas>=2.2.3"]
+
+optional-dependencies.dev = [
+    "ipykernel>=6.29.5",
+    "black[jupyter]>=23.1.0",
+    "flake8>=4.0.1",
+    "isort>=5.9.3",
+    "mypy>=0.942",
+    "nbconvert",
+    "nbformat>=4.2.0",
+    "pre-commit>=2.16.0",
+    "pydocstyle>=6.1.1",
+    "pytest>=7.1.1",
+    "pytest-cov>=4.0.0",
+    "mkdocs>=1.3.1",
+    "mkdocstrings-python>=0.7.1",
+    "mkdocs-click>=0.8.0",
+    "mkdocs-material>=9.5.42",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+files = ["src", "tests"]
+ignore_missing_imports = true
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,39 @@
+﻿repos:
+  - repo: local
+    hooks:
+      - id: typecheck
+        name: (mypy) check for type errors
+        entry: mypy
+        language: system
+        types: [python]
+
+      - id: codeformat
+        name: black code formatter
+        entry: black
+        language: system
+        types: [python]
+
+      - id: docstyle
+        name: pydocstyle docstring checker
+        entry: pydocstyle
+        language: system
+        exclude: tests
+        types: [python]
+
+      - id: lint
+        name: flake8 linter
+        entry: flake8
+        language: system
+        types: [python]
+
+      - id: importsort
+        name: isort import sorter
+        entry: isort --overwrite-in-place
+        language: system
+        types: [python]
+
+      - id: clear-notebooks
+        name: clear Jupyter notebook outputs
+        entry: jupyter nbconvert --clear-output
+        language: system
+        files: \.ipynb$
