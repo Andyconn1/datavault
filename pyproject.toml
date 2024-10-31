@@ -5,15 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "datavault"
 dynamic = ["version"]
-authors = [
-    { name = "Andy Conn", email = "andyconn1988@googlemail.com"}
-]
+authors = [{ name = "Andy Conn", email = "andyconn1988@googlemail.com" }]
 urls.github = "https://github.com/Andyconn1/datavault"
 description = "A tool for storing and important personal information."
 readme = "README.md"
 requires-python = ">=3.8"
 
-dependencies = ["pandas>=2.2.3"]
+dependencies = ["pandas>=2.2.3", "sqlalchemy>=2.0.36"]
 
 optional-dependencies.dev = [
     "ipykernel>=6.29.5",
